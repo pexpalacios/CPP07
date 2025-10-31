@@ -6,11 +6,17 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 16:00:59 by penpalac          #+#    #+#             */
-/*   Updated: 2025/10/29 18:39:22 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/10/31 15:33:59 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
+
+template <typename T>
+void f(T const &tmp)
+{
+	std::cout << tmp << " ";
+}
 
 int main(void)
 {
@@ -19,7 +25,7 @@ int main(void)
 	std::cout << std::endl;
 
 	const int arr_int_const[] = {1, 2, 3, 4, 5};
-	::iter(arr_int_const, 5, ::f);
+	::iter(arr_int_const, 5, ::f<const int>);
 	std::cout << std::endl;
 
 	std::string arr_str[] = {"aaa", "bbb", "ccc"};

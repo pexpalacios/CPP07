@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 16:01:34 by penpalac          #+#    #+#             */
-/*   Updated: 2025/10/29 18:39:39 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/10/31 15:33:35 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ void iter(T *arr, const int len_arr, void (*f)(const T &))
 }
 
 template <typename T>
-void f(T const &tmp)
+void iter(T *arr, const int len_arr, void (*f)(T &))
 {
-	std::cout << tmp << " ";
+	for (int i = 0; i < len_arr; i++)
+		f(arr[i]);
 }
 
 #endif
